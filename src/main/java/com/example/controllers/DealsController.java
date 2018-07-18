@@ -13,15 +13,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.models.Deal;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 @RestController
 @RequestMapping("/api/deals")
+@Api("/api/deals")
 @CrossOrigin("*")
 public class DealsController {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(DealsController.class);	
 
-
 	@GetMapping("/public")
+	@ApiOperation(value = "Return a list of deals.", response = Deal[].class)
+	@ApiResponses({ @ApiResponse(code = 200, message = "Success", response = Deal[].class) })
 	public List<Deal> getDealsPublic() {
 		LOGGER.info("getDealsPublic");
 		
@@ -56,6 +63,11 @@ public class DealsController {
 	
 	@GetMapping("/private")
 	@PreAuthorize("hasAuthority('read:deals')")
+	@ApiOperation(value = "Return a list of special deals.", notes = "It is an protected operation", response = Deal[].class)
+	@ApiResponses({ 
+		@ApiResponse(code = 200, message = "Success", response = Deal[].class),
+		@ApiResponse(code = 401, message = "Unauthorized"),
+		@ApiResponse(code = 403, message = "Forbidden")})
 	public List<Deal> getDealsPrivate() {
 		LOGGER.info("getDealsPrivate");
 		

@@ -1,10 +1,23 @@
 package com.example.models;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(description = "Representation of a Deal.")
 public class Deal {
+	@ApiModelProperty(position = 1, value = "The id of Deal.")
 	private Integer id;
+	
+	@ApiModelProperty(position = 2, value = "The name of Deal.")
 	private String name;
+	
+	@ApiModelProperty(position = 3, value = "The description of Deal.")
 	private String description;
+	
+	@ApiModelProperty(position = 4, value = "The original price.")
 	private Double originalPrice;
+	
+	@ApiModelProperty(position = 5, value = "The sale price.", notes = "It have the discount applied")
 	private Double salePrice;
 
 	public Integer getId() {
