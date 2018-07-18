@@ -7,7 +7,7 @@ This implementation was developed following a [tutorial](https://auth0.com/blog/
 
 
 # API REST
-The services offered enable to perform CRUD operations on a MongoDB instance created on [mLab](https://mlab.com/databases/todoapp).
+This API offers both a public and a private endpoint. Only who have authority will be able access to the protected resources on the private endpoint.
 
 ![img](https://i.imgur.com/srXDdBy.png)
 
