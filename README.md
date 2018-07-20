@@ -1,4 +1,4 @@
-# Daily Deals - backend
+# Daily Deals - Backend
 This app is implemented on Spring Boot and exposes (both __protected__ and __unprotected__) REST services in order to consumed by an Angular app ([Daily Deals app](https://github.com/jpOlivo/daily-deals-frontend)).
 
 We implemented __token-based authentication__ with [Auth0](https://auth0.com/) in order to protect some resources of our API. On the other hand, the data used by app are simply mocks.
@@ -6,7 +6,7 @@ We implemented __token-based authentication__ with [Auth0](https://auth0.com/) i
 This implementation was developed following a [tutorial](https://auth0.com/blog/angular-2-authentication/) from [@kukicado](https://twitter.com/kukicado)
 
 
-# API REST
+## API Rest
 This API offers both a public and a private endpoint. Only who have authority will be able access to the protected resources on the private endpoint.
 
 ![img](https://i.imgur.com/srXDdBy.png)
@@ -15,10 +15,10 @@ There is a docs of this API available in [http://localhost:8080/swagger-ui.html#
 
 
 
-# Running the app
+## Running the app
 From Eclipse IDE `com.example.DealsApp -> Run As -> Java Application`
 
-# Invoking services
+## Invoking services
 
 1- Get __/api/deals/public__
 
